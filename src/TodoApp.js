@@ -1,11 +1,23 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View, TextInput, Button } from 'react-native'
+import AddTodo from './contianers/AddTodo';
 
  class TodoApp extends Component {
+
+    state = {
+        region: '',
+    }
     render() {
         return (
-            <View>
-                <Text> textInComponent </Text>
+            <View style={styles.container}>
+               <TextInput
+                    placeholder="введите"
+                    style={styles.textinput}
+               />
+               <Button
+                title="сохранить"
+                onPress={()=>{}}
+               />
             </View>
         )
     }
@@ -17,5 +29,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+      },
+      textinput: {
+          borderBottomWidth: 1,
+          borderColor: 'grey',
+          height: 50,
+          width: '50%'
+         
       },
 })
