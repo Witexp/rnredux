@@ -1,21 +1,20 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
-import TodoApp from './src/TodoApp'
-import store from './src/store'
-import { Provider } from 'react-redux'
+import { Text, View } from 'react-native'
+import Root from './src/Root'
+import { Provider } from 'react-redux';
+//import store from './src/store';
+import {createStore, applyMiddleware} from 'redux'
+import reducers from './src/reducers';
 
+const store = createStore(reducers)
+const App = () => {
 
-
-
-
-export default class App extends Component {
-  render() {
     return (
-      <Provider store={store}> 
-        <TodoApp/>
+      <Provider store={store}>
+        <Root/>
       </Provider>
-    
+      
     )
   }
-}
 
+export default App
